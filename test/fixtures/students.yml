@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  UID: MyString
+  last_name: MyString
+  first_name: MyString
+  degree: MyString
+  specialization: MyString
+  cohort: MyString
+
+two:
+  UID: MyString
+  last_name: MyString
+  first_name: MyString
+  degree: MyString
+  specialization: MyString
+  cohort: MyString

@@ -23,7 +23,27 @@ class MsstudentsController < ApplicationController
   # GET /msstudents
   # GET /msstudents.json
   def index
+    logger.info("----------Debugging------------")
+    logger.info("        temp:      #{request.GET}")
+     if request.GET.to_a.empty?
     @msstudents = Msstudent.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @msstudents }
+      format.json { render xml: @msstudents }
+    end
+    else
+      #@template.template_format = :html
+      @msstudents = Msstudent.where(request.GET).all
+      logger.info(" Recieving request.")
+      logger.info("        students:      #{@msstudents}")
+      respond_to do |format|
+        format.json  { render :json => @msstudents }
+      end
+      #render "", :layout => false
+    end
+
   end
 
   # GET /msstudents/1

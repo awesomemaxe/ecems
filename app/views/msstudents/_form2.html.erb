@@ -1,0 +1,45 @@
+<%= form_for(@msstudent) do |f| %>
+  <% if @msstudent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@msstudent.errors.count, "error") %> prohibited this msstudent from being saved:</h2>
+
+      <ul>
+      <% @msstudent.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :UID %><br>
+    <%= f.text_field :UID %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+    <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :degree %><br>
+    <%= f.select :degree, ["MEng-ce","MEng-ee","MEng-phd","MS-ce","MS-ee","MS-phd"] %>
+  </div>
+  <div class="field">
+    <%= f.label :specialization %><br>
+    <%= f.select :degree, ["A","B","C","D","E","F"] %>
+  </div>
+  <div class="field">
+    <%= f.label :cohort %><br>
+    <%= f.text_field :cohort %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

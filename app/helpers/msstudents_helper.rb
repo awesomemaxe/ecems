@@ -1,0 +1,2 @@
+module MsstudentsHelper
+end

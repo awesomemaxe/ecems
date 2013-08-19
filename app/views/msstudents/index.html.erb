@@ -1,0 +1,39 @@
+<h1>ECE Masters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Uid</th>
+      <th>Last name</th>
+      <th>First name</th>
+      <th>Email</th>
+      <th>Degree</th>
+      <th>Specialization</th>
+      <th>Cohort</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @msstudents.each do |msstudent| %>
+      <tr>
+        <td><%= msstudent.UID %></td>
+        <td><%= msstudent.last_name %></td>
+        <td><%= msstudent.first_name %></td>
+        <td><%= msstudent.email %></td>
+        <td><%= msstudent.degree %></td>
+        <td><%= msstudent.specialization %></td>
+        <td><%= msstudent.cohort %></td>
+        <td><%= link_to 'Show', msstudent %></td>
+        <td><%= link_to 'Edit', edit_msstudent_path(msstudent) %></td>
+        <td><%= link_to 'Destroy', msstudent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New msStudent', new_msstudent_path %>

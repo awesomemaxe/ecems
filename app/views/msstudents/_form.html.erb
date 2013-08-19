@@ -29,11 +29,11 @@
   </div>
   <div class="field">
     <%= f.label :degree %><br>
-    <%= f.text_field :degree %>
+    <%= f.select :degree, ["MEng-ce","MEng-ee","MEng-phd","MS-ce","MS-ee","MS-phd"] %>
   </div>
   <div class="field">
     <%= f.label :specialization %><br>
-    <%= f.text_field :specialization %>
+    <%= f.select :specialization, ["Not determined","A","B","C","D","E","F"] %>
   </div>
   <div class="field">
     <%= f.label :cohort %><br>

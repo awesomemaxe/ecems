@@ -1,7 +1,7 @@
 class Msstudent < ActiveRecord::Base
 #before_validation :cohort_conversion
-attr_accessible :UID, :last_name, :first_name, :email,:degree, :specialization,:cohort
-#validates :UID, :last_name, :first_name, :email,:degree, :specialization,:cohort
+attr_accessible :UID, :last_name, :first_name, :email, :degree, :specialization,:cohort
+validates :UID, :last_name, :first_name, :degree, :cohort, presence: true
 validates :UID, uniqueness: true, format: {
 	with: /([a-zA-Z][\d]{8})\z/i,
 	message: 'This is not an valid student ID'
